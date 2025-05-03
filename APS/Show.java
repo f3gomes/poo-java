@@ -4,15 +4,8 @@ import java.util.Date;
 public class Show {
   private Date data;
   private Local local;
-  private int ingressosDisponiveis;
   private Double precoDoIngresso;
-
-  public Show (Date data, Local local, int ingressosDisponiveis, Double precoDoIngresso) {
-    this.data = data;
-    this.local = local;
-    this.ingressosDisponiveis = ingressosDisponiveis;
-    this.precoDoIngresso = precoDoIngresso;
-  }
+  private int ingressosDisponiveis;
 
   public Date getData() {
     return this.data;
@@ -30,6 +23,22 @@ public class Show {
     return this.precoDoIngresso;
   }
 
+  public void setData(Date data) {
+    this.data = data;
+  }
+
+  public void setLocal(Local local) {
+    this.local = local;
+  }
+
+  public void setIngressosDisponiveis(int ingressosDisponiveis) {
+    this.ingressosDisponiveis = ingressosDisponiveis;
+  }
+
+  public void setPrecoDoIngresso(Double preco) {
+    this.precoDoIngresso = preco;
+  }
+
   public void venderIngresso(int quantidade) {
     if(this.ingressosDisponiveis > quantidade) {
       this.ingressosDisponiveis -= quantidade;
@@ -41,6 +50,10 @@ public class Show {
   }
 
   public void exibirDetalhes() {
-
+    System.out.println("Show Do Bell Marques");
+    System.out.println("Local: " + this.local.getNome());
+    System.out.println("Data: " + this.data);
+    System.out.println("Valor do Ingresso: " + this.precoDoIngresso);
+    System.out.println("");
   };
 } 

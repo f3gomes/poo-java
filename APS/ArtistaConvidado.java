@@ -1,4 +1,4 @@
-public abstract class ArtistaConvidado {
+public class ArtistaConvidado extends Show {
   private String nomeDoArtista;
   private Double cache;
 
@@ -15,5 +15,10 @@ public abstract class ArtistaConvidado {
     return this.cache;
   }
 
-  public abstract void exibirDetalhes();
+  @Override
+  public void exibirDetalhes() {
+    super.exibirDetalhes();
+    System.out.println("Artista convidado: " + this.nomeDoArtista);
+    System.out.println("Cache" + this.cache);
+  }
 } 

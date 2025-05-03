@@ -1,18 +1,33 @@
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
 public class GerenciamentoEventos {
-    private List<Show> shows;
+	private List<Show> shows;
 
-    public void adicionarShow(Show show) {
-        shows.add(show);
-    }
+	public GerenciamentoEventos() {
+		this.shows = new ArrayList<>();
+	}
 
-    public void listarShows() {
+	public void adicionarShow(Show show) {
+		shows.add(show);
+	}
 
-    }
+	public void listarShows() {
+		for(Show show: shows)  {
+			show.exibirDetalhes();
+		}
+	}
 
-    public void buscarShowPorData(Date data) {
+	public List<Show> buscarShowPorData(Date data) {
+		List<Show> result = new ArrayList<>();
 
-    }
+		for(Show show : shows) {
+			if(show.getData().equals(data)) {
+				result.add(show);
+			}
+		}
+
+		return result;
+	}
 }

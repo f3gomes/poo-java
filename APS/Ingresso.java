@@ -21,5 +21,9 @@ public abstract class Ingresso {
     return this.preco;
   }
 
-  public abstract void exibirDetalhes();
+  public void exibirDetalhes() {
+    System.out.println("Codigo: " + this.codigo);
+    System.out.println("Tipo: " + this.tipo);
+    System.out.println("Valor:" + this.preco);
+  }
 }
