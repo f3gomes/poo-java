@@ -48,10 +48,10 @@ public class Show {
   }
 
   public void exibirDetalhes() {
-    System.out.println("Show");
     System.out.println("Local: " + this.local.getNome());
     System.out.println("Data: " + this.data);
     System.out.println("Valor do Ingresso: " + this.ingresso.getPreco());
+    System.out.println("Ingressos restantes: " + this.ingressosDisponiveis);
     System.out.println("");
   };
 }

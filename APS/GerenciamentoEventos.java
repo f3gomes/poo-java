@@ -14,16 +14,24 @@ public class GerenciamentoEventos {
 	}
 
 	public void listarShows() {
+		System.out.println("Lista de shows: ");
+		System.out.println("***************************************************");
 		for (Show show : shows) {
 			show.exibirDetalhes();
 		}
+
+		System.out.println("***************************************************");
 	}
 
 	public void buscarShowPorData(Date data) {
+		System.out.println("Lista de shows no dia: " + data);
+		System.out.println("***************************************************");
 		for (Show show : shows) {
 			if (show.getData().equals(data)) {
 				show.exibirDetalhes();
 			}
 		}
+
+		System.out.println("***************************************************");
 	}
 }
