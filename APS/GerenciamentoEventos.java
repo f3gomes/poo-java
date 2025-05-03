@@ -14,20 +14,16 @@ public class GerenciamentoEventos {
 	}
 
 	public void listarShows() {
-		for(Show show: shows)  {
+		for (Show show : shows) {
 			show.exibirDetalhes();
 		}
 	}
 
-	public List<Show> buscarShowPorData(Date data) {
-		List<Show> result = new ArrayList<>();
-
-		for(Show show : shows) {
-			if(show.getData().equals(data)) {
-				result.add(show);
+	public void buscarShowPorData(Date data) {
+		for (Show show : shows) {
+			if (show.getData().equals(data)) {
+				show.exibirDetalhes();
 			}
 		}
-
-		return result;
 	}
 }

@@ -2,6 +2,7 @@
 import java.util.Date;
 
 public class Main {
+  @SuppressWarnings("deprecation")
   public static void main(String[] args) {
       Local l1 = new Local("Castelão", "Fortaleza", 50000);
       Local l2 = new Local("Armazém", "Fortaleza", 10000);
@@ -9,23 +10,13 @@ public class Main {
       Date d1 = new Date(125, 6, 1);
       Date d2 = new Date(125, 10, 2);
 
-      Show s1 = new Show();
-      s1.setLocal(l1);
-      s1.setData(d1);
-      s1.setIngressosDisponiveis(5);
-      s1.setPrecoDoIngresso(100.0);
+      Ingresso vip = new Ingresso(123, TipoDeIngresso.VIP, 200.0);
+      Ingresso pista = new Ingresso(123, TipoDeIngresso.PISTA, 100.0);
+      Ingresso camarote = new Ingresso(123, TipoDeIngresso.CAMAROTE, 300.0);
 
-      Show s2 = new Show();
-      s2.setLocal(l1);
-      s2.setData(d2);
-      s2.setIngressosDisponiveis(5);
-      s2.setPrecoDoIngresso(200.0);
-
-      Show s3 = new Show();
-      s3.setLocal(l2);
-      s3.setData(d1);
-      s3.setIngressosDisponiveis(5);
-      s3.setPrecoDoIngresso(300.0);
+      Show s1 = new Show(d1, l1, pista, 5);
+      Show s2 = new Show(d2, l1, vip, 5);
+      Show s3 = new Show(d2, l2, camarote, 5);
 
       GerenciamentoEventos ge = new GerenciamentoEventos();
 
@@ -34,5 +25,6 @@ public class Main {
       ge.adicionarShow(s3);
 
       ge.listarShows();
+      ge.buscarShowPorData(d2);
   }
 }

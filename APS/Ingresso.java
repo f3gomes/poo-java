@@ -1,12 +1,12 @@
-public abstract class Ingresso {
+public class Ingresso {
   private int codigo;
   private TipoDeIngresso tipo;
-  private Double preco;
+  private Double precoDoIngresso;
 
-  public Ingresso(int codigo, TipoDeIngresso tipo, Double preco) {
+  public Ingresso(int codigo, TipoDeIngresso tipo, Double precoDoIngresso) {
     this.codigo = codigo;
     this.tipo = tipo;
-    this.preco = preco;
+    this.precoDoIngresso = precoDoIngresso;
   }
 
   public int getCodigo() {
@@ -18,12 +18,12 @@ public abstract class Ingresso {
   }
 
   public Double getPreco() {
-    return this.preco;
+    return this.precoDoIngresso;
   }
 
   public void exibirDetalhes() {
     System.out.println("Codigo: " + this.codigo);
     System.out.println("Tipo: " + this.tipo);
-    System.out.println("Valor:" + this.preco);
+    System.out.println("Valor:" + this.precoDoIngresso);
   }
 }
