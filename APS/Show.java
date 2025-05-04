@@ -5,8 +5,10 @@ public class Show {
   private Local local;
   private Ingresso ingresso;
   private int ingressosDisponiveis;
+  private Double valorDasVendas;
 
   public Show(Date data, Local local, Ingresso ingresso, int ingressosDisponiveis) {
+    this.valorDasVendas = 0.0;
     this.data = data;
     this.local = local;
     this.ingresso = ingresso;
@@ -25,6 +27,14 @@ public class Show {
     return this.ingressosDisponiveis;
   }
 
+  public Ingresso getIngresso() {
+    return this.ingresso;
+  }
+
+  public Double getValorDasVendas() {
+    return this.valorDasVendas;
+  }
+
   public void setData(Date data) {
     this.data = data;
   }
@@ -37,9 +47,18 @@ public class Show {
     this.ingressosDisponiveis = ingressosDisponiveis;
   }
 
+  public void setIngresso(Ingresso ingresso) {
+    this.ingresso = ingresso;
+  }
+
   public void venderIngresso(int quantidade) {
-    if (this.ingressosDisponiveis > quantidade) {
+    if (this.ingressosDisponiveis >= quantidade) {
       this.ingressosDisponiveis -= quantidade;
+      this.valorDasVendas += ingresso.getPreco() * quantidade;
+
+      System.out.println(quantidade + " ingressos foram vendidos para o show no " + this.local.getNome());
+    } else {
+      System.out.println("Ingressos esgotados");
     }
   }
 
@@ -51,7 +70,7 @@ public class Show {
     System.out.println("Local: " + this.local.getNome());
     System.out.println("Data: " + this.data);
     System.out.println("Valor do Ingresso: " + this.ingresso.getPreco());
-    System.out.println("Ingressos restantes: " + this.ingressosDisponiveis);
     System.out.println("");
   };
+
 }

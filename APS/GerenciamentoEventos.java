@@ -4,9 +4,11 @@ import java.util.List;
 
 public class GerenciamentoEventos {
 	private List<Show> shows;
+	private Double totalDasVendas;
 
 	public GerenciamentoEventos() {
 		this.shows = new ArrayList<>();
+		this.totalDasVendas = 0.0;
 	}
 
 	public void adicionarShow(Show show) {
@@ -32,6 +34,17 @@ public class GerenciamentoEventos {
 			}
 		}
 
+		System.out.println("***************************************************");
+	}
+
+	public void calculaFaturamento() {
+		for (Show show : shows) {
+			this.totalDasVendas += show.getValorDasVendas();
+		}
+
+		System.out.println("");
+		System.out.println("***************************************************");
+		System.out.println("Valor total dos ingressos vendidos: " +this.totalDasVendas);
 		System.out.println("***************************************************");
 	}
 }
